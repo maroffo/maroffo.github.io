@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Massimiliano Aroffo</title>
+    <meta name="description" content="Engineering leader turned hands-on builder. AI-assisted development, cloud architecture, performance optimization.">
+    <meta name="author" content="Maroffo">
+    <link rel="canonical" href="https://maroffo.github.io/">
+    <meta name="theme-color" content="#23272b">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Literata:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <noscript>
+        <style>
+            #theme-toggle { display: none; }
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --theme: #23272b; --entry: #1d2024; --primary: #e2dbc4;
+                    --secondary: #6e7f5c; --tertiary: #3a4540; --content: #e2dbc4;
+                    --code-bg: #1d2024; --border: #3a4540;
+                    --nur-accent: #fc7261; --nur-link: #9d80b7; --nur-link-hover: #6fa3d2;
+                    color-scheme: dark;
+                }
+                .list { background: var(--theme); }
+            }
+        </style>
+    </noscript>
+    <script>
+        if (localStorage.getItem("pref-theme") === "dark") {
+            document.querySelector("html").dataset.theme = 'dark';
+        } else if (localStorage.getItem("pref-theme") === "light") {
+            document.querySelector("html").dataset.theme = 'light';
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.querySelector("html").dataset.theme = 'dark';
+        } else {
+            document.querySelector("html").dataset.theme = 'light';
+        }
+    </script>
+    <style>
+        :root {
+            --gap: 24px; --content-gap: 20px; --nav-width: 1024px; --main-width: 720px;
+            --header-height: 60px; --footer-height: 60px; --radius: 8px;
+            --theme: #f0e7d4; --entry: #f0e7d4; --primary: #5a5e6b;
+            --secondary: #5a6a4d; --tertiary: #d4c7a4; --content: #5a5e6b;
+            --code-bg: #f0e7d4; --border: #d4c7a4;
+            --nur-accent: #fc7261; --nur-link: #9d80b7; --nur-link-hover: #6fa3d2;
+            --nur-selection: #8ebdb6;
+            color-scheme: light;
+        }
+        :root[data-theme="dark"] {
+            --theme: #23272b; --entry: #1d2024; --primary: #e2dbc4;
+            --secondary: #6e7f5c; --tertiary: #3a4540; --content: #e2dbc4;
+            --code-bg: #1d2024; --border: #3a4540;
+            --nur-accent: #fc7261; --nur-link: #9d80b7; --nur-link-hover: #6fa3d2;
+            --nur-selection: #8ebdb6;
+            color-scheme: dark;
+        }
+        ::selection { background: var(--nur-selection); color: var(--primary); }
+        *, ::after, ::before { box-sizing: border-box; }
+        html { -webkit-tap-highlight-color: transparent; overflow-y: scroll; }
+        a, button, body, h1, h2, h3, h4, h5, h6 { color: var(--primary); }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+            font-size: 18px; line-height: 1.6; word-break: break-word;
+            background: var(--theme); margin: 0;
+        }
+        a { text-decoration: none; }
+        ul { padding: 0; margin: 0; list-style: none; }
+
+        /* Header / Nav */
+        .header { }
+        .nav {
+            display: flex; flex-wrap: wrap; justify-content: space-between;
+            max-width: calc(var(--nav-width) + var(--gap) * 2);
+            margin-inline-start: auto; margin-inline-end: auto;
+            line-height: var(--header-height);
+        }
+        .nav a { display: block; }
+        .logo, #menu { display: flex; margin: auto var(--gap); }
+        .logo { flex-wrap: inherit; }
+        .logo a { font-size: 24px; font-weight: 700; }
+        .logo-switches { display: inline-flex; margin: auto 4px; flex-wrap: inherit; }
+        button#theme-toggle {
+            font-size: 26px; margin: auto 4px; padding: 0;
+            font: inherit; background: 0 0; border: 0; cursor: pointer;
+        }
+        #theme-toggle:focus { outline: 0; }
+        [data-theme="dark"] #moon { display: none; }
+        [data-theme="light"] #sun { display: none; }
+        #menu { list-style: none; word-break: keep-all; overflow-x: auto; white-space: nowrap; }
+        #menu li + li { margin-inline-start: var(--gap); }
+        #menu a { font-size: 16px; }
+        #menu .active { font-weight: 500; border-bottom: 2px solid var(--nur-accent); }
+
+        /* Main */
+        .main {
+            position: relative;
+            min-height: calc(100vh - var(--header-height) - var(--footer-height));
+            max-width: calc(var(--main-width) + var(--gap) * 2);
+            margin: auto; padding: var(--gap);
+        }
+
+        /* Profile (home-info style) */
+        .first-entry {
+            position: relative; display: flex; flex-direction: column;
+            justify-content: center; min-height: 320px;
+            margin: var(--gap) 0 calc(var(--gap) * 2);
+        }
+        .first-entry .entry-header h1 {
+            font-size: 34px; line-height: 1.3; margin: 0;
+        }
+        .first-entry .entry-content {
+            margin: 14px 0; font-size: 16px; color: var(--secondary);
+        }
+        .first-entry .entry-footer { font-size: 14px; }
+
+        /* Post content (about section) */
+        .post-content {
+            font-family: 'Literata', Georgia, 'Times New Roman', serif;
+            color: var(--content); margin: 30px 0; line-height: 1.7;
+        }
+        .post-content h3 {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 24px; margin: 24px 0 16px;
+        }
+        .post-content p { margin-bottom: var(--content-gap); }
+        .post-content ul { padding-inline-start: 20px; margin-bottom: var(--content-gap); list-style: disc; }
+        .post-content li { margin-top: 5px; }
+        .post-content a { color: var(--nur-link); box-shadow: 0 1px; }
+        .post-content a:hover { color: var(--nur-link-hover); }
+        .post-content strong { color: var(--primary); }
+        .post-content code {
+            margin: auto 4px; padding: 4px 6px; font-size: .78em;
+            background: var(--code-bg); border-radius: 2px; border: 1px solid var(--border);
+        }
+
+        /* Social icons */
+        .social-icons a { display: inline-flex; padding: 10px; }
+        .social-icons a svg { height: 26px; width: 26px; }
+        .social-icons a:hover svg { fill: var(--nur-accent); }
+
+        /* Blog link button */
+        .blog-button {
+            display: inline-block; margin-top: 1rem;
+            font-family: 'Inter', sans-serif; font-weight: 500; font-size: 15px;
+            color: var(--nur-accent); background: var(--entry);
+            border: 1px solid var(--nur-accent); border-radius: var(--radius);
+            padding: 8px 20px; transition: background .2s, color .2s;
+        }
+        .blog-button:hover { background: var(--nur-accent); color: #fff; }
+
+        /* Footer */
+        .footer {
+            font-size: 12px; color: var(--secondary);
+            max-width: calc(var(--main-width) + var(--gap) * 2);
+            margin: auto; padding: calc((var(--footer-height) - var(--gap)) / 2) var(--gap);
+            text-align: center; line-height: 24px;
+        }
+        .footer span { margin-inline-start: 1px; margin-inline-end: 1px; }
+        .footer a { color: inherit; border-bottom: 1px solid var(--secondary); }
+        .footer a:hover { color: var(--nur-link-hover); border-bottom-color: var(--primary); }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar-track { background: 0 0; }
+        ::-webkit-scrollbar-thumb {
+            background: var(--tertiary); border: 5px solid var(--theme); border-radius: var(--radius);
+        }
+        ::-webkit-scrollbar-thumb:hover { background: var(--secondary); }
+
+        /* Mobile */
+        @media screen and (max-width: 768px) {
+            :root { --gap: 14px; }
+            .first-entry { min-height: 260px; }
+        }
+    </style>
+</head>
+
+<body class="list" id="top">
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <a href="/" accesskey="h" title="Maroffo (Alt + H)">Maroffo</a>
+                <div class="logo-switches">
+                    <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                        <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <ul id="menu">
+                <li>
+                    <a href="/blog/" title="Blog">
+                        <span>Blog</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/blog/about/" title="About">
+                        <span>About</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <article class="first-entry home-info">
+            <header class="entry-header">
+                <h1>Hi, I'm Maroffo</h1>
+            </header>
+            <div class="entry-content">
+                Engineering leader turned hands-on builder. AI-assisted development, cloud architecture, and performance optimization.
+            </div>
+            <footer class="entry-footer">
+                <div class="social-icons">
+                    <a href="https://github.com/maroffo" target="_blank" rel="noopener noreferrer me" title="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/maroffo/" target="_blank" rel="noopener noreferrer me" title="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                </div>
+            </footer>
+        </article>
+
+        <div class="post-content">
+            <p>I'm Massimiliano Aroffo, engineering leader with 25 years in software development who returned to hands-on technical work to master AI-assisted development and cloud architecture firsthand.</p>
+
+            <p>Currently <strong>Principal Software Engineer at <a href="https://hikmaai.io/">HikmaAI</a></strong> (responsible AI governance and security tooling) and <strong>Cloud Engineer &amp; Architect at <a href="https://wishew.com/">Wishew</a></strong> (high-performance infrastructure for social crowdfunding).</p>
+
+            <h3>Open source</h3>
+            <ul>
+                <li><a href="https://github.com/maroffo/claude-forge"><code>claude-forge</code></a>: modular AI skills and orchestration for Claude Code</li>
+                <li><a href="https://github.com/maroffo/feed-brain"><code>feed-brain</code></a>: AI-powered personal feed aggregator with LLM classification</li>
+                <li><a href="https://github.com/maroffo/behindbarspulse"><code>BehindBarsPulse</code></a>: AI-powered Italian prison news monitoring</li>
+                <li><a href="https://github.com/maroffo/PhrasePerfect"><code>PhrasePerfect</code></a>: privacy-first on-device language assistant for macOS</li>
+                <li><a href="https://github.com/maroffo/FortiDesk"><code>FortiDesk</code></a>: team management system for Fortitudo 1901 Rugby</li>
+                <li><a href="https://github.com/maroffo/deepseek-bias-audit"><code>deepseek-bias-audit</code></a>: DeepSeek AI bias and censorship evaluation</li>
+            </ul>
+
+            <a href="/blog/" class="blog-button">Read the blog</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <span>&copy; 2026 <a href="/">Maroffo</a></span>
+    </footer>
+
+    <script>
+        document.getElementById("theme-toggle").addEventListener("click", () => {
+            const html = document.querySelector("html");
+            if (html.dataset.theme === "dark") {
+                html.dataset.theme = 'light';
+                localStorage.setItem("pref-theme", 'light');
+            } else {
+                html.dataset.theme = 'dark';
+                localStorage.setItem("pref-theme", 'dark');
+            }
+        });
+    </script>
+</body>
+</html>
