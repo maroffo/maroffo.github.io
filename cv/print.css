@@ -1,0 +1,107 @@
+/* CV - compact sans direction: Tahoma body, Avenir Next name, orange accent. */
+@page {
+  size: A4;
+  margin: 15mm 19mm;
+}
+
+:root {
+  --orange: #d65a1e;
+  --ink: #2b2b2b;
+  --muted: #767676;
+  --rule: #e3ded7;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Tahoma", "DejaVu Sans", Geneva, sans-serif;
+  font-size: 8.3pt;
+  line-height: 1.28;
+  color: var(--ink);
+  margin: 0;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Name */
+h1 {
+  font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  color: var(--orange);
+  font-size: 22pt;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  margin: 0 0 3px 0;
+}
+
+/* Contact line (single paragraph right after the name) */
+h1 + p {
+  color: var(--muted);
+  font-size: 8.4pt;
+  letter-spacing: 0.2px;
+  margin: 0 0 15px 0;
+}
+h1 + p a { color: var(--muted); }
+
+/* Section headers */
+h2 {
+  color: var(--orange);
+  font-size: 9.5pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  margin: 11px 0 5px 0;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Job date eyebrow */
+h3 {
+  color: var(--muted);
+  font-size: 7.2pt;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin: 8px 0 1px 0;
+}
+
+/* Job title + location (paragraph immediately after the date eyebrow) */
+h3 + p {
+  margin: 0 0 4px 0;
+  line-height: 1.25;
+}
+h3 + p strong {
+  color: var(--ink);
+  font-size: 11pt;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+h3 + p em {
+  font-style: normal;
+  color: var(--muted);
+  font-size: 8pt;
+}
+
+p { margin: 0 0 4px 0; }
+strong { font-weight: 700; color: var(--ink); }
+
+a { color: #b25018; text-decoration: none; }
+
+ul { margin: 2px 0 5px 0; padding-left: 16px; }
+li { margin: 0.5px 0; }
+
+/* Footer disclaimer */
+hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 12px 0 8px 0;
+}
+hr + p {
+  text-align: center;
+  font-style: italic;
+  color: var(--muted);
+  font-size: 8pt;
+}
+
+/* Keep headers attached to the content that follows them */
+h2, h3 { break-after: avoid; }
+h3 + p { break-before: avoid; }

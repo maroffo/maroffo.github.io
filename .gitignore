@@ -1,0 +1,6 @@
+# Build intermediates / previews
+cv/_frag.html
+cv/_print.html
+cv/_preview.png
+*.bak
+.DS_Store
